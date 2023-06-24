@@ -72,7 +72,7 @@ def pregunta_03():
     # Importe GridSearchCV
     # Importe Pipeline
     # Importe OneHotEncoder
-    from sklearn.compose import make_column_transformer
+    from sklearn.compose import make_column_selector,make_column_transformer
     from sklearn.feature_selection import SelectKBest, f_regression
     from sklearn.linear_model import LinearRegression
     from sklearn.model_selection import GridSearchCV
@@ -114,7 +114,7 @@ def pregunta_03():
     # Defina un diccionario de parámetros para el GridSearchCV. Se deben
     # considerar valores desde 1 hasta 11 regresores para el modelo
     param_grid = {
-        "selectKBest__k": list(range(1, 12)),
+        "selectKBest__k": list(range(1, 11)),
     }
 
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
@@ -126,7 +126,7 @@ def pregunta_03():
         cv=5,
         scoring="neg_mean_squared_error",
         refit=True,
-        return_train_score=True,
+        return_train_score=False,
     )
 
     # Búsque la mejor combinación de regresores
