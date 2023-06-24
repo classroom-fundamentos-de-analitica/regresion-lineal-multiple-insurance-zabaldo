@@ -102,7 +102,7 @@ def pregunta_03():
             ),
             # Paso 3: Construya un modelo de regresión lineal.
             (
-                "selectKBest",
+                "linearRegression",
                 LinearRegression(),
             ),
         ],
